@@ -26,9 +26,11 @@ app.use(bodyParser.urlencoded({limit:'20mb',extended:false}))
 const indexRouter = require('./routes/index')
 const singerRouter = require('./routes/singers')
 const songRouter = require('./routes/songs')
+const playlistRouter = require('./routes/playlist')
 app.use('/', indexRouter)
 app.use('/singers', singerRouter)
 app.use('/songs', songRouter)
+app.use('/playlist', playlistRouter)
 
 
 

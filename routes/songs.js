@@ -32,7 +32,8 @@ router.post('/', async (req,res) =>{
     const song = new Song({
         title : req.body.title,
         singer: req.body.singer,
-        language: req.body.language
+        language: req.body.language,
+        playlist:req.body.playlist
     })
     try {
         const newSong = await song.save()
@@ -77,11 +78,14 @@ router.get('/:id/edit', async (req,res) =>{
 
 router.put('/:id', async (req,res) => {
     let song
+    let singer
     try{
         song = await Song.findById(req.params.id)
+        singer = await Singer.find({})
         song.title = req.body.title
         song.singer = req.body.singer
         song.language = req.body.language
+        song.playlist = req.body.playlist
         await song.save()
         res.redirect(`/songs/${song.id}`)
     } catch {  
@@ -90,6 +94,7 @@ router.put('/:id', async (req,res) => {
         } else {
             res.render('songs/edit', {
                 song : song,
+                singer:singer,
                 errMsg: 'Error updating the song'
             })
         }

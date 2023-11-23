@@ -6,6 +6,7 @@
         <th >Song Title</th>
         <th >Singer</th>
         <th>Language</th>
+        <th>In playlist</th>
         <th>Action</th>
 
     </tr>
@@ -14,6 +15,8 @@
             <td><%= song.title%></td>
             <td><%= song.singer%></td>
             <td><%= song.language%></td>
+            <td><%= song.playlist? "Yes" : "No"%></td>
+            
 
             <td>
                 <a href="/songs/<%= song.id%>"><button type="button">View</button></a>

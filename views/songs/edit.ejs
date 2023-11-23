@@ -17,6 +17,7 @@
         <% }) %>
     </select>
 
+    <label>Language</label>
     <select name="language" value="<%= song.language %>">
         <option value="English">English</option>
         <option value="Cantonese">Cantonese</option>
@@ -26,6 +27,17 @@
         <option value="Thai">Thai</option>
         <option value="Other">Other</option>
     </select>
+
+    <label>In Playlist</label>
+    <select name="playlist">
+            <% if (song.playlist == true) { %>
+                <option selected label="<%= song.playlist? "Yes" : "No" %>" value=true ></option>
+                <option label="<%= !song.playlist? "Yes" : "No" %>" value= false></option>
+          <%  } else { %>
+            <option selected label="<%= song.playlist? "Yes" : "No" %>" value=false ></option>
+            <option label="<%= !song.playlist? "Yes" : "No" %>" value=true ></option>          
+            <%  } %>
+    </select> 
 
     <a href="/songs"><button type="button">Cancel</button></a>
 

@@ -14,6 +14,10 @@ const songSchema = new mongoose.Schema({
     language:{
         type:String,
         required:true
+    },
+    playlist:{
+        type:Boolean,
+        required:true,
     }
 })
 
