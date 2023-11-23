@@ -1,0 +1,38 @@
+<h2>New Song</h2>
+
+<form action="/songs" method="POST">
+    <label>Title</label>
+    <input type="text" name="title" value ="<%= song.title %>" >
+
+
+    <label>Singer</label>
+    <select name="singer">
+        <% singer.forEach(singer => { %>
+            <% if (singer.name === song.singer) { %>
+                <option selected label="<%= singer.name %>" value="<%= singer.name%>" ></option>
+          <%  } else { %>
+            <option label="<%= singer.name %>" value="<%= singer.name %>" ></option>
+          <%  } %>
+        <% }) %>
+    </select>
+
+
+    <label>Language</label>
+    <select name="language" value="<%= song.language %>">
+        <option value="English">English</option>
+        <option value="Cantonese">Cantonese</option>
+        <option value="Mandarin">Mandarin</option>
+        <option value="Korean">Korean</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Thai">Thai</option>
+        <option value="Other">Other</option>
+    </select>
+    <div>
+    <br>
+    <a href="/singers"><button type="button">Cancel</button></a>
+    <button type="submit">Create</button>
+    </div>
+</form>
+
+
+

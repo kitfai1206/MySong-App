@@ -1,0 +1,25 @@
+<h2>All Songs</h2>
+
+
+<table >
+    <tr >
+        <th >Song Title</th>
+        <th >Singer</th>
+        <th>Language</th>
+        <th>Action</th>
+
+    </tr>
+    <% songs.forEach(song => { %>
+        <tr>
+            <td><%= song.title%></td>
+            <td><%= song.singer%></td>
+            <td><%= song.language%></td>
+
+            <td>
+                <a href="/songs/<%= song.id%>"><button type="button">View</button></a>
+                <a href="/songs/<%= song.id%>/edit"><button type="button">Edit</button></a>
+            </td>
+
+        </tr>
+    <% }) %>
+</table>

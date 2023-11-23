@@ -1,0 +1,20 @@
+<h2>Edit Singer</h2>
+<div style="display:flex">
+<div>
+<form action="/singers/<%= singer.id %>?_method=PUT" method="POST">
+    <label>Name</label>
+    <input type="text" name="name" value ="<%= singer.name %>" >
+    <label>Gender</label>
+    <select id="gender" id="gender" name="gender" value="<%= singer.gender %>">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    <a href="/singers"><button type="button">Cancel</button></a>
+    <button type="submit">Update</button>
+</form></div>
+<div style="margin-left:3px;">
+    <form  action="/singers/<%= singer.id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<h2>New Singer</h2>
+
+<form action="/singers" method="POST">
+    <label>Name</label>
+    <input type="text" name="name" value ="<%= singer.name %>" >
+    <label>Gender</label>
+    <select id="gender" name="gender" value="<%= singer.gender %>">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    <div>
+    <br>
+    <a href="/singers"><button type="button">Cancel</button></a>
+    <button type="submit">Create</button>
+    </div>
+</form>

@@ -1,0 +1,21 @@
+<h2>All Singers</h2>
+
+<table >
+    <tr >
+        <th >Name</th>
+        <th >Gender</th>
+        <th>Actions</th>
+    </tr>
+    <% singers.forEach(singer => { %>
+        <tr>
+            <td><%= singer.name%></td>
+            <td><%= singer.gender%></td>
+            <td>
+                <a href="/singers/<%= singer.id%>"><button type="button">View</button></a>
+                <a href="/singers/<%= singer.id%>/edit"><button type="button">Edit</button></a>
+            </td>
+
+        </tr>
+    <% }) %>
+</table>
+

@@ -1,0 +1,40 @@
+<h2>Edit Song</h2>
+
+<div style="display:flex">
+
+<form action="/songs/<%= song.id %>?_method=PUT" method="POST" >
+    <label>Title</label>
+    <input type="text" name="title" value ="<%= song.title %>" >
+
+    <label>Singer</label>
+    <select name="singer">
+        <% singer.forEach(singer => { %>
+            <% if (singer.name === song.singer) { %>
+                <option selected label="<%= singer.name %>" value="<%= singer.name%>" ></option>
+          <%  } else { %>
+            <option label="<%= singer.name %>" value="<%= singer.name %>" ></option>
+          <%  } %>
+        <% }) %>
+    </select>
+
+    <select name="language" value="<%= song.language %>">
+        <option value="English">English</option>
+        <option value="Cantonese">Cantonese</option>
+        <option value="Mandarin">Mandarin</option>
+        <option value="Korean">Korean</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Thai">Thai</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <a href="/songs"><button type="button">Cancel</button></a>
+
+    <button type="submit">Update</button>
+
+</form>
+<div style="margin-left:3px;">
+<form  action="/songs/<%= song.id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete</button>
+</form>
+</div>
+</div>
